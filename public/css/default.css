@@ -103,7 +103,7 @@ ins {
 
 mark {
    background-color: #A7F4F6;
-   color: #555;
+   color: rgb(168, 32, 32);
 }
 
 del { text-decoration: line-through; }
