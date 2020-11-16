@@ -105,6 +105,12 @@
         "category":"Outdoor activity social distancing during Covid-19",
         "image":"terrier-fittness.jpg",
         "url":"https://hack-boston-2020.web.app/"
+      },
+      {
+        "title":"Trace",
+        "category":"Easy Covid-19 tracking",
+        "image":"trace-test.jpg",
+        "url":"https://github.com/Waterstar1/Trace"
       }
     ]
   },

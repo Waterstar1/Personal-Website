@@ -511,11 +511,12 @@ ul#nav li.current a { color: #5c83f0; }
 	-moz-opacity: 1;
 	filter:alpha(opacity=100);
 }
-.portfolio-item:hover .link-icon {
+
+/* .portfolio-item:hover .link-icon {
    opacity: 1;
 	-moz-opacity: 1;
 	filter:alpha(opacity=100);
-}
+} */
 
 /* popup modal */
 .popup-modal {
