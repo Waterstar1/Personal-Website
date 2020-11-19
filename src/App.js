@@ -9,6 +9,7 @@ import Resume from './Components/Resume';
 import Contact from './Components/Contact';
 import Testimonials from './Components/Testimonials';
 import Portfolio from './Components/Portfolio';
+import Modal from './Components/Modal'
 
 class App extends Component {
 
@@ -16,13 +17,17 @@ class App extends Component {
     super(props);
     this.state = {
       foo: 'bar',
-      resumeData: {}
+      resumeData: {},
+      modal: {show: false, title: "", description: {}}
     };
 
+    this.setModal = this.setModal.bind(this);
     ReactGA.initialize('UA-110570651-1');
     ReactGA.pageview(window.location.pathname);
 
   }
+
+  setModal(show, title, description) { this.setState({modal: {show: show, title: title, description: description}})};
 
   getResumeData(){
     $.ajax({
@@ -46,10 +51,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Modal setModal={this.setModal} showModal={this.state.modal.show} modal={this.state.modal} />
         <Header data={this.state.resumeData.main}/>
         <About data={this.state.resumeData.main}/>
         <Resume data={this.state.resumeData.resume}/>
-        <Portfolio data={this.state.resumeData.portfolio}/>
+        <Portfolio data={this.state.resumeData.portfolio}  setModal={this.setModal}/>
         <Testimonials data={this.state.resumeData.testimonials}/>
         <Contact data={this.state.resumeData.main}/>
         <Footer data={this.state.resumeData.main}/>
