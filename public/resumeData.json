@@ -95,6 +95,12 @@
   "portfolio":{
     "projects": [
       {
+        "title":"Bearmaps",
+        "category":"Maps web server for UC Berkeley",
+        "image":"bearmaps-image.jpg",
+        "url":"http://bearmaps-eustyn-trinh.herokuapp.com/map.html#lat=37.86274526050971&lon=-122.25321954492188&depth=3"
+      },
+      {
         "title":"Berkeley Professor Ratings",
         "category":"Chrome extension for Cal schedule planning",
         "image":"berkeley-professor-ratings.jpg",
