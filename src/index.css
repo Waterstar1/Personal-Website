@@ -17,12 +17,14 @@
   text-align: center;
 }
 .modal button{
-  color: #444;
-  border-color: #444;
+  position: relative;
+  top: 10%;
+  left: 10%;
+  width: 10%;
+  height: 10%;
   font-weight: bold;
-  margin-top: 20px;
 }
 .modal p{
-  color: #444;
+  color: rgb(184, 43, 43);
   font-weight: bold;
 }

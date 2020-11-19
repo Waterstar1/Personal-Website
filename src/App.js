@@ -18,7 +18,7 @@ class App extends Component {
     this.state = {
       foo: 'bar',
       resumeData: {},
-      modal: {show: false, title: "", description: {}}
+      modal: {show: false, url: "", title: "", description: {}}
     };
 
     this.setModal = this.setModal.bind(this);
@@ -27,7 +27,7 @@ class App extends Component {
 
   }
 
-  setModal(show, title, description) { this.setState({modal: {show: show, title: title, description: description}})};
+  setModal(show, url, title, description) { this.setState({modal: {show: show, url: url, title: title, description: description}})};
 
   getResumeData(){
     $.ajax({

@@ -7,11 +7,12 @@ const backdrop = {
   }
   
 const modalStyle = {
-    hidden: { y: "-100vh", opacity: 0 },
+    hidden: { y: "200px", opacity: 0 },
     visible: { 
         y: "200px", 
         opacity: 1,
-        transition: { delay: 0.5 }
+        transition: { duration: .5, delay: .5 },
+        scale: 1.5
     },
 }
 
