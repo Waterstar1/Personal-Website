@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { MdClose } from 'react-icons/md';
+import styled from 'styled-components';
 
 const backdrop = {
     visible: { opacity: 1 },
@@ -16,40 +18,79 @@ const modalStyle = {
     },
 }
 
+const CloseModalButton = styled(MdClose)`
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  z-index: 10;
+`;
 
 class Modal extends Component  {
 
 
     render() { 
+
+        function bullets(bullets) {
+            if (Array.isArray(bullets)) {
+                return bullets.map(bullet => <React.Fragment> {bullet} <br></br> </React.Fragment>);
+            }
+            return bullets;
+          }
+      
         var setModal = this.props.setModal;
         var modal = this.props.modal;
         var description = modal.description;
+        var content;
+        const names = ["Technology", "Description", "Code", "Demo"];
+
+        if(description) {
+            content = Object.values(description).map((value, key) => { 
+                return <div className="row">
+                    <div className="one columns header-col">
+                        <p> hi: </p>
+                    </div>
+
+                    <div className="nine columns main-col">
+                        <div className="row item">
+                        <div className="one columns">
+                             hello 
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+            })
+        }
+
         return (
-        <AnimatePresence>
-            { this.props.showModal && (
-                <motion.div className="backdrop"
-                variants={backdrop}
-                initial="hidden"
-                animate="visible"
-                exit="hidden"
-                >
-                <motion.div className="modalStyle"
-                    variants={modalStyle}
-                >
-                    <p>{modal.title}</p>
-                    <p>Technology: {description.technology} </p>
-                    <p>Code: {description.code}</p>
-                    <p>Demo: {description.demo}</p>
-                    
-                    
-                    
-                    <button onClick={() => setModal(false, "", {})}> Start Again </button>
-                    
-                </motion.div>
-                </motion.div>
-            )}
-        </AnimatePresence>
-        )
+            <section id="modal">
+                <AnimatePresence>
+                    { this.props.showModal && (
+                        <motion.div className="backdrop"
+                        variants={backdrop}
+                        initial="hidden"
+                        animate="visible"
+                        exit="hidden"
+                        >
+                        <motion.div className="modalStyle"
+                            variants={modalStyle}
+                        >
+                            <CloseModalButton onClick={() => setModal(false, "", "", {})}> </CloseModalButton>
+                            <b>{modal.title}</b>
+                            {content} 
+                            
+                        
+                            
+                        </motion.div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </section>
+            )
     }
 }
 

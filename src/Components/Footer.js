@@ -20,7 +20,7 @@ class Footer extends Component {
 
            <ul className="copyright">
               <li>&copy; Copyright 2020 Eustyn Trinh</li>
-              <li>Design by Tim Baker</li>
+              <li>Design by StyleShout</li>
            </ul>
 
         </div>
